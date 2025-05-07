@@ -1,0 +1,24 @@
+﻿<Window x:Class="PokemonAlbum.Views.CardDeleteView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PokemonAlbum.Views"
+        mc:Ignorable="d"
+        Title="Delete Card" Height="200" Width="400"
+        WindowStartupLocation="CenterOwner">
+    <Grid>
+        <TextBlock Text="{Binding CardName}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10" FontWeight="Bold" FontSize="16"/>
+        <TextBlock Text="Are you sure you want to delete this card?" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" />
+
+        <Button Content="Yes" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="100" Margin="20"
+        Command="{Binding ConfirmDeleteCommand}" 
+        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+        Background="#1976D2" Foreground="White" FontWeight="Bold" BorderThickness="0" Cursor="Hand"/>
+
+        <Button Content="No" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="100" Margin="20"
+        Command="{Binding CancelDeleteCommand}"
+        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+        Background="#1976D2" Foreground="White" FontWeight="Bold" BorderThickness="0" Cursor="Hand"/>
+    </Grid>
+</Window>
